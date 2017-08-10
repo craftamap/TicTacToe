@@ -46,6 +46,23 @@ def rulevalidator(g):
   else:
     return False
   
+def windiagonal(g):
+    if g[1][1] != 0:
+        if ((g[0][0] == g[1][1]) and (g[1][1]==g[2][2])) or ((g[0][2] == g[1][1]) and (g[1][1] == g[2][0])):
+            return g[1][1]
+        else:
+            return False
+    else:
+        return False
+
+
+def winhorizontal(g):
+    for i in g:
+        if i[0] != 0:
+            if (i[0] == i[1]) and (i[1] == i[2]):
+                return i[0]
+    return False 
+
     
     
 print rulevalidator(game)
